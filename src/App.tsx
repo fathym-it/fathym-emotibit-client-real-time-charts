@@ -11,8 +11,10 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+import { AppBar, Box, Toolbar } from '@mui/material';
+import HeaderLogo from './Images/FathymAndEmotibit.svg'
 
-class AppProperties {}
+class AppProperties { }
 
 class AppState {
   public Calculating: boolean;
@@ -75,6 +77,22 @@ export default class App extends React.Component<AppProperties, AppState> {
   public render() {
     return (
       <div>
+        <AppBar
+          position="static"
+          sx={{
+            backgroundColor: '#DDDDDD',
+            mb: 3
+          }}>
+          <Box
+            component="img"
+            sx={{
+              maxWidth: 450,
+              m: 2
+            }}
+            alt="Fathym and Emotibit"
+            src={HeaderLogo}
+          />
+        </AppBar>
         <Charts charts={this.state.ChartStates}></Charts>
       </div>
     );
